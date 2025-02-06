@@ -424,6 +424,24 @@ read?: (details: { config: any; route: { id: string } }) => boolean;
 Test support for `read` from `$app/server`
 
 </div>
+</div>
+<div class="ts-block-property">
+
+```dts
+middleware?: () => boolean;
+```
+
+<div class="ts-block-property-details">
+
+<div class="ts-block-property-bullets">
+
+- <span class="tag since">available since</span> v2.18.0
+
+</div>
+
+Test support for middleware
+
+</div>
 </div></div>
 
 </div>
@@ -2628,7 +2646,7 @@ type SubmitFunction<
 				reset?: boolean;
 				invalidateAll?: boolean;
 			}) => Promise<void>;
-	  }) => void)
+	  }) => MaybePromise<void>)
 >;
 ```
 

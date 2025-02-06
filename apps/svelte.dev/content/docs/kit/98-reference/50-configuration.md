@@ -518,6 +518,26 @@ universal?: string;
 The location of your universal [hooks](/docs/kit/hooks).
 
 </div>
+</div>
+<div class="ts-block-property">
+
+```ts
+// @noErrors
+middleware?: string;
+```
+
+<div class="ts-block-property-details">
+
+<div class="ts-block-property-bullets">
+
+- <span class="tag">default</span> `"src/hooks.middleware"`
+- <span class="tag since">available since</span> v2.18.0
+
+</div>
+
+The location of your middleware [hooks](/docs/kit/hooks).
+
+</div>
 </div></div>
 
 </div>
