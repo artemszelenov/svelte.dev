@@ -877,6 +877,35 @@ Compress files in `directory` with gzip and brotli, where appropriate. Generates
 </div>
 </div></div>
 
+## CallMiddleware
+
+<div class="ts-block">
+
+```dts
+interface CallMiddleware {/*…*/}
+```
+
+<div class="ts-block-property">
+
+```dts
+(
+	request: Request,
+	middleware: Middleware
+): Promise<
+	| Response
+	| {
+			request: Request;
+			request_headers: Headers;
+			did_reroute: boolean;
+			response_headers: Headers;
+			add_response_headers: (response: Response) => void;
+	  }
+>;
+```
+
+<div class="ts-block-property-details"></div>
+</div></div>
+
 ## ClientInit
 
 <blockquote class="since note">
@@ -1410,6 +1439,30 @@ type LoadProperties<
 ```
 
 </div>
+
+## Middleware
+
+<div class="ts-block">
+
+```dts
+interface Middleware {/*…*/}
+```
+
+<div class="ts-block-property">
+
+```dts
+(options: {
+	request: Request;
+	url: URL;
+	setRequestHeaders: (headers: Record<string, string>) => void;
+	setResponseHeaders: (headers: Record<string, string>) => void;
+	cookies: Cookies;
+	reroute: (pathname: string) => unknown;
+}): Response | unknown;
+```
+
+<div class="ts-block-property-details"></div>
+</div></div>
 
 ## Navigation
 
